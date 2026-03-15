@@ -1,15 +1,15 @@
 <?php
 
-    /* TO-DO: Include database-connection.php to connect to the database
+include "database-connection.php";
+/* TO-DO: Include database-connection.php to connect to the database
               Hint: Both header.php and database-connection.php are inside the includes folder
     */
 
+include "session.php";
 
-    /* TO-DO: Include session.php to handle login sessions
+/* TO-DO: Include session.php to handle login sessions
               Hint: Both header.php and session.php are inside the includes folder
     */
-    
-
 ?>
 
 <!DOCTYPE html>
@@ -41,12 +41,19 @@
             <ul>
                 <li><a href="index.php">Toy Catalog</a></li>
 
+                <li>
+                    <a href="<?= $logged_in ? "logout.php" : "login.php" ?>">
+                        <?= $logged_in ? "Log Out" : "Log In" ?>
+                    </a>
+                </li>
                 <!-- TO-DO: Update this link to show "Log In" or "Log Out" depending on whether the user is logged in
                             Hint: Check session.php for a flag variable tracking login status
                                   Consider using the null-coalescing operator
+
+                                  <li><a href="login.php">Log In</a></li>
                 -->
-                <li><a href="login.php">Log In</a></li>  
-                 
+
+
             </ul>
         </nav>
 
